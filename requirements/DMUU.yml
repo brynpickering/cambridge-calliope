@@ -1,0 +1,32 @@
+name: calliope_DMUU
+
+channels:
+    - conda-forge
+    - anaconda
+
+dependencies:
+    - python=3.6
+    - bottleneck
+    - click
+    - cufflinks-py=0.12.1
+    - glpk=4.61
+    - hdf5
+    - ipdb
+    - jinja2
+    - jupyter
+    - libnetcdf
+    - natsort
+    - netcdf4
+    - numexpr
+    - numpy=1.14.1
+    - pandas=0.22
+    - pip
+    - plotly=2.5
+    - pyomo=5.4.3
+    - pytest
+    - pytest-cov
+    - ruamel.yaml<=0.15
+    - scikit-learn=0.19.1
+    - xarray=0.10.1
+    - pip:
+        - "git+https://github.com/calliope-project/calliope.git@8584d72d75ef31a6714a30a82f0fd204c7e283a9"

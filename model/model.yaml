@@ -1,0 +1,18 @@
+##
+# IMPORT OTHER FILES
+##
+
+import:
+    - 'model_config/techs.yaml'
+    - 'model_config/locations.yaml'
+    - 'model_config/links.yaml'
+
+##
+# MODEL
+##
+model:
+    subset_time: 2015
+    timeseries_data_path: 'timeseries_data/DMUU'
+
+run:
+    solver: gurobi

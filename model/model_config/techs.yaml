@@ -1,0 +1,243 @@
+tech_groups:
+    supply:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+    supply_plus:
+        constraints.lifetime: 20
+        costs.monetary.interest_rate: 0.1
+    conversion:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+    conversion_plus:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+    transmission:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+        costs.monetary.energy_cap: 1e-5  # dummy cost
+    storage:
+        constraints.lifetime: 15
+        costs.monetary.interest_rate: 0.1
+
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+techs:
+
+# Plant techs
+
+    chp:
+        essentials:
+            name: 'District CHP'
+            parent: conversion_plus
+            primary_carrier_out: electricity
+            carrier_out: electricity
+            carrier_out_2: heat
+            carrier_in: gas
+        constraints:
+            energy_cap_max: 25000
+            energy_eff: 0.405
+            carrier_ratios.carrier_out_2.heat: 0.83
+            export_carrier: electricity
+        costs.monetary:
+            energy_cap: 746  # [SPONS] # GBP per kW capacity. Varies from 1050 (1MW) to 650 (7MW) - make it linear/piecewise? (https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/345190/Part_5_CHP__Finance.pdf)
+            om_prod: 0.004  # .4p/kWh for 4500 operating hours/year - might need to be om_con (https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/345190/Part_5_CHP__Finance.pdf)
+            export: file=export_price.csv:export  # 80% wholesale market price for 2015, from Elexon
+
+    gshp:
+        essentials:
+            name: 'District GSHP'
+            parent: conversion_plus
+            primary_carrier_out: heat
+            primary_carrier_in: electricity
+            carrier_out: heat
+            carrier_in: electricity
+            carrier_in_2: low_T_heat
+        constraints:
+            energy_cap_max: 22000  # [Kensa] heat pump 75kW nominal, 102.5kW output @ 45C output, 10C input
+            energy_eff: 4.07  # [Kensa] heat pump 75kW nominal, Seasonal COP = 4.07  @ 45C output, 10C input
+        costs.monetary:
+            energy_cap: 441.31  # [SPONS]
+
+    ground_heat:
+        essentials:
+            name: 'Heat for GSHP'
+            parent: supply
+            carrier_out: low_T_heat
+        constraints:
+            resource: 0.8  # per borehole, 100m long. 5-6m between boreholes, i.e. 6.25m2 area per borehole and 5kW/6.25 = 0.8kW per m2
+            resource_area_max: 121860  # size of the nearby field
+            energy_cap_max: .inf
+            resource_area_per_energy_cap: 1.25  # 1.25m2 per kW
+        costs.monetary:
+            resource_area: 3250 # [Kensa]
+# Heating
+
+    boiler:
+        essentials:
+            name: 'Boiler'
+            parent: conversion
+            carrier_out: heat
+            carrier_in: gas
+        constraints:
+            energy_cap_max: 2000
+            energy_eff: 0.82
+        costs.monetary:
+            energy_cap: 43.13 # [SPONS]
+
+##-Renewables-##
+    pv:
+        essentials:
+            name: 'Solar PV'
+            color: '#99CB48'
+            parent: supply_plus
+            carrier: electricity
+        constraints:
+            resource: file=solar_resource.csv:pv
+            parasitic_eff: 0.85  # inverter
+            energy_cap_max: .inf
+            resource_area_per_energy_cap: 7  # 7m2 per kWp (14% efficient)
+            force_resource: true
+            export_carrier: electricity
+        costs.monetary:
+            energy_cap: 1346
+            export: -0.0203 # FIT
+
+    st_fp:
+        essentials:
+            name: 'Solar Thermal - Flat Panel'
+            color: '#99CB48'
+            stack_weight: 100
+            parent: supply
+            carrier: heat
+        constraints:
+            resource: file=solar_resource.csv:st_fp
+            energy_cap_max: 5000
+            force_resource: true
+            resource_area_max: .inf
+        costs.monetary:
+            resource_area: 1200 # source?
+
+    st_vt:
+        essentials:
+            name: 'Solar Thermal - Vacuum Tube'
+            color: '#99CB48'
+            parent: supply
+            carrier: heat
+        constraints:
+            resource: file=solar_resource.csv:st_vt
+            energy_cap_max: 5000
+            force_resource: true
+            resource_area_max: .inf
+        costs.monetary:
+            resource_area: 1200 # source?
+
+##-STORAGE-##
+
+    store_heat:
+        essentials:
+            name: 'Hot thermal storage'
+            parent: storage
+            carrier: heat
+        constraints:
+            storage_cap_max: 10000
+            energy_cap_max: .inf  # i.e. ignored
+            charge_rate: 0.3
+            storage_loss: 0.01
+            energy_eff: 0.9
+        costs.monetary:
+            storage_cap: 70.60  # [SPONS]
+
+    store_elec:
+        essentials:
+            name: 'Battery storage'
+            parent: storage
+            carrier: electricity
+        constraints:
+            storage_cap_max: 5000
+            energy_cap_max: .inf  # i.e. ignored
+            charge_rate: 0.7
+        costs.monetary:
+            storage_cap: 401  # [SPONS]
+
+##-electricity SUPPLY-##
+
+    supply_grid_electricity:
+        essentials:
+            name: 'National grid import'
+            parent: supply
+            carrier: electricity
+        constraints:
+            resource: .inf
+            energy_cap_max: 25000
+        costs.monetary:
+            energy_cap: 15  # transformer installation cost
+            om_con: 0.095  # 9.5p/kWh electricity price
+
+##-GAS SUPPLY-##
+
+    supply_gas:
+        essentials:
+            name: 'Natural gas import'
+            parent: supply
+            carrier: gas
+        constraints:
+            resource: .inf
+            energy_cap_max: 25000
+        costs.monetary:
+            om_con: 0.025  # 2.5p/kWh gas price
+
+##-DEMAND-##
+
+    demand_electricity:
+        essentials:
+            name: 'electricity demand'
+            parent: demand
+            carrier: electricity
+        constraints:
+            resource: file=demand_electricity_mean.csv
+
+    demand_heat:
+        essentials:
+            name: 'Heat demand'
+            parent: demand
+            carrier: heat
+        constraints:
+            resource: file=demand_heat_mean.csv
+
+##-DISTRIBUTION-##
+
+    electricity_lines:
+        essentials:
+            name: 'AC electricity distribution'
+            parent: transmission
+            carrier: electricity
+        constraints:
+            energy_cap_max: 25000
+            energy_eff: 0.98
+
+    heat_pipes:
+        essentials:
+            name: 'District heat distribution'
+            parent: transmission
+            carrier: heat
+        constraints:
+            lifetime: 30
+            energy_cap_max: 25000
+            energy_eff_per_distance: 0.999975
+        costs.monetary:
+            interest_rate: 0.1
+            energy_cap_per_distance: 420  # [SPONS]
+
+    gas_pipes:
+        essentials:
+            name: 'District gas distribution'
+            parent: transmission
+            carrier: gas
+        constraints:
+            lifetime: 30
+            energy_cap_max: 25000
+        costs.monetary:
+            interest_rate: 0.1
+            purchase_per_distance: 56  # [SPONS]

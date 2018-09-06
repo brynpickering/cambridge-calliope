@@ -1,0 +1,160 @@
+'313':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_313.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_313.csv
+  model:
+    probability: 0.06000000000000001
+'436':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_436.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_436.csv
+  model:
+    probability: 0.06200000000000001
+'141':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_141.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_141.csv
+  model:
+    probability: 0.07600000000000001
+'261':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_261.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_261.csv
+  model:
+    probability: 0.07600000000000001
+'456':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_456.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_456.csv
+  model:
+    probability: 0.094
+'122':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_122.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_122.csv
+  model:
+    probability: 0.11599999999999999
+'344':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_344.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_344.csv
+  model:
+    probability: 0.06200000000000001
+'167':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_167.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_167.csv
+  model:
+    probability: 0.05800000000000001
+'229':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_229.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_229.csv
+  model:
+    probability: 0.013999999999999999
+'132':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_132.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_132.csv
+  model:
+    probability: 0.09000000000000001
+'285':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_285.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_285.csv
+  model:
+    probability: 0.034
+'342':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_342.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_342.csv
+  model:
+    probability: 0.04200000000000001
+'299':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_299.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_299.csv
+  model:
+    probability: 0.018000000000000002
+'275':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_275.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_275.csv
+  model:
+    probability: 0.102
+'97':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_97.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_97.csv
+  model:
+    probability: 0.04400000000000001
+'221':
+  techs:
+    demand_heat:
+      constraints:
+        resource: file=scenarios/demand_heat_221.csv
+    demand_electricity:
+      constraints:
+        resource: file=scenarios/demand_electricity_221.csv
+  model:
+    probability: 0.052000000000000005

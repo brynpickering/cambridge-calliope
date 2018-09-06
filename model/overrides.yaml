@@ -1,0 +1,55 @@
+dmuu:
+    model.name: 'Binary LP West Cambridge model'
+    model.timeseries_data_path: 'timeseries_data/DMUU'
+    run.solver_options.Threads: 3
+    run.cyclic_storage: true
+    techs:
+        chp.costs.monetary:
+            energy_cap: 703.47  # [SPONS]
+            purchase: 46480  # [SPONS]
+
+        gshp.costs.monetary:
+            energy_cap: 158.42  # [SPONS]
+            purchase: 2516.6  # [SPONS]
+
+        boiler.costs.monetary:
+            energy_cap: 35.324  # [SPONS]
+            purchase: 2024.3  # [SPONS]
+
+        supply_gas.costs.monetary:
+            energy_cap: 10
+            purchase: 16800  # fixed cost to lay 300m of pipe to the area [SPONS]
+
+        supply_grid_electricity.costs.monetary:
+            purchase: 75  # electricity standing charge
+
+        store_heat.costs.monetary:
+            energy_cap: 65.683  # [SPONS]
+            purchase: 527.25  # [SPONS]
+
+        store_elec.costs.monetary:
+            energy_cap: 350  # [SPONS]
+            purchase: 1666.7  # [SPONS]
+
+        pv.costs.monetary:
+            energy_cap: 1000
+            purchase: 1500
+
+        st_vt.costs.monetary:
+            energy_cap: 700
+            purchase: 1200
+
+        st_fp.costs.monetary:
+            energy_cap: 700
+            purchase: 1200
+
+        heat_pipes.costs.monetary:
+            energy_cap_per_distance: 281  # [SPONS]
+            purchase_per_distance: 294  # [SPONS]
+
+    # Add clustering
+    model.time:
+        function: apply_clustering
+        function_options:
+            clustering_func: file=clusters.csv:term
+            how: mean

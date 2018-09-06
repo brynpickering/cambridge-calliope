@@ -1,0 +1,117 @@
+##
+# LOCATIONS
+##
+
+locations:
+    ? A01, A02, A03, A04, A05b, A05a, A07, A08, A09a, A09b, A10, A10b, A11,
+      A12, A13, A14, A17, A18, A19, A20, A21_A23, A22_A24,
+      B01, B02_B03, B04_A16, B05a, B06, B07, B08, C01_C03,
+      C02, C04_C05_C06, C07a, C07b, C08, D02, D01, D04, D06
+    : techs:
+        boiler:
+        pv:
+        st_fp:
+        st_vt:
+        store_heat:
+        store_elec:
+        demand_heat:
+        demand_electricity:
+
+    D07b:  # Energy centre
+        techs:
+            chp:
+            gshp:
+            ground_heat:
+            supply_gas:
+            supply_grid_electricity:
+
+    N5, N14, N20, N34:  # transmission-only nodes
+
+# Roof area (90% of building footprint)
+    A01.available_area: 3238
+    A02.available_area: 8145
+    A03.available_area: 2975
+    A04.available_area: 2756
+    A05b.available_area: 5481
+    A05a.available_area: 5481
+    A07.available_area: 7200
+    A08.available_area: 435
+    A09a.available_area: 3470
+    A09b.available_area: 1120
+    A10.available_area: 1104
+    A10b.available_area: 1581
+    A11.available_area: 3141
+    A12.available_area: 3957
+    A13.available_area: 2436
+    A18.available_area: 2279
+    A14.available_area: 2070
+    A17.available_area: 11176
+    A19.available_area: 18000
+    A20.available_area: 720
+    A21_A23.available_area: 2880
+    A22_A24.available_area: 6660
+    B01.available_area: 1080
+    B02_B03.available_area: 3384
+    B04_A16.available_area: 5720
+    B05a.available_area: 1857
+    B06.available_area: 5953
+    B07.available_area: 5634
+    B08.available_area: 2502
+    C01_C03.available_area: 9968
+    C02.available_area: 2978
+    C04_C05_C06.available_area: 10796
+    C07a.available_area: 2799
+    C07b.available_area: 6337
+    C08.available_area: 5535
+    D02.available_area: 9423
+    D01.available_area: 1269
+    D04.available_area: 2783
+    D06.available_area: 891
+    D07b.available_area: 1620
+
+# location coordinates
+
+    A01.coordinates: {lat: 52.21193, lon: 0.09363}
+    A02.coordinates: {lat: 52.21175, lon: 0.09298}
+    A03.coordinates: {lat: 52.21137, lon: 0.09379}
+    A04.coordinates: {lat: 52.21068, lon: 0.09279}
+    A05a.coordinates: {lat: 52.21125, lon: 0.09452}
+    A05b.coordinates: {lat: 52.21102, lon: 0.09292}
+    A07.coordinates: {lat: 52.20986, lon: 0.09302}
+    A08.coordinates: {lat: 52.20913, lon: 0.09406}
+    A09a.coordinates: {lat: 52.21056, lon: 0.09157}
+    A09b.coordinates: {lat: 52.21149, lon: 0.09312}
+    A10.coordinates: {lat: 52.21060, lon: 0.09131}
+    A10b.coordinates: {lat: 52.20959, lon: 0.09050}
+    A11.coordinates: {lat: 52.20950, lon: 0.09140}
+    A12.coordinates: {lat: 52.20901, lon: 0.09106}
+    A13.coordinates: {lat: 52.20901, lon: 0.09011}
+    A14.coordinates: {lat: 52.20972, lon: 0.08873}
+    A17.coordinates: {lat: 52.21206, lon: 0.08931}
+    A18.coordinates: {lat: 52.20905, lon: 0.0885429}
+    A19.coordinates: {lat: 52.20876, lon: 0.08655}
+    A20.coordinates: {lat: 52.20981, lon: 0.08771}
+    A21_A23.coordinates: {lat: 52.20884, lon: 0.08533}
+    A22_A24.coordinates: {lat: 52.20971, lon: 0.08548}
+    B01.coordinates: {lat: 52.21258, lon: 0.08873}
+    B02_B03.coordinates: {lat: 52.21231, lon: 0.08795}
+    B04_A16.coordinates: {lat: 52.21039, lon: 0.08891}
+    B05a.coordinates: {lat: 52.21041, lon: 0.08564}
+    B06.coordinates: {lat: 52.2102882, lon: 0.0853273}
+    B07.coordinates: {lat: 52.21237, lon: 0.08651}
+    B08.coordinates: {lat: 52.21249, lon: 0.08522}
+    C01_C03.coordinates: {lat: 52.21091, lon: 0.08244}
+    C02.coordinates: {lat: 52.21023, lon: 0.08232}
+    C04_C05_C06.coordinates: {lat: 52.20969, lon: 0.08244}
+    C07a.coordinates: {lat: 52.20875, lon: 0.08251}
+    C07b.coordinates: {lat: 52.20870, lon: 0.08135}
+    C08.coordinates: {lat: 52.21211, lon: 0.08082}
+    D02.coordinates: {lat: 52.21280, lon: 0.08101}
+    D01.coordinates: {lat: 52.21374, lon: 0.07970}
+    D04.coordinates: {lat: 52.21090, lon: 0.08045}
+    D06.coordinates: {lat: 52.21036, lon: 0.08029}
+    D07b.coordinates: {lat: 52.21017, lon: 0.07926}
+    N5.coordinates: {lat: 52.2103778, lon: 0.0926489}
+    N14.coordinates: {lat: 52.2122777, lon: 0.0885236}
+    N20.coordinates: {lat: 52.2099669, lon: 0.0855464}
+    N34.coordinates: {lat: 52.2090465, lon: 0.0824833}

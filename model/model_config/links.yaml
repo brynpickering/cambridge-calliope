@@ -1,0 +1,234 @@
+links:
+    D07b,D06.techs:
+            electricity_lines.distance: 99
+            gas_pipes.distance: 99
+            heat_pipes:
+                distance: 99
+                constraints.one_way: true
+
+    D06,D04.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    D04,C08.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    C08,D02.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    D02,D01.techs:
+            electricity_lines.distance: 210
+            gas_pipes.distance: 210
+            heat_pipes:
+                distance: 210
+                constraints.one_way: true
+
+    D06,C02.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    C02,C04_C05_C06.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    C04_C05_C06,N34.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N34,C07a.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N34,C07b.techs:
+            electricity_lines.distance: 109
+            gas_pipes.distance: 109
+            heat_pipes:
+                distance: 109
+                constraints.one_way: true
+
+    C02,C01_C03.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    C02,N20.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N20,A22_A24.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A22_A24,A21_A23.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A21_A23,A19.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N20,B06.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N20,B05a.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N20,A20.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A20,A14.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A14,A18.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A14,B04_A16.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    B04_A16,A17.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A17,N14.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N14,B01.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N14,B02_B03.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    B02_B03,B07.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    B07,B08.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A14,A10b.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A10b,A13.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A10b,A11.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A11,A12.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A11,A08.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A10b,A10.techs:
+            electricity_lines.distance: 150
+            gas_pipes.distance: 150
+            heat_pipes:
+                distance: 150
+                constraints.one_way: true
+
+    A10,A09a.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A09a,N5.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    N5,A07.techs:
+            electricity_lines.distance: 90
+            gas_pipes.distance: 90
+            heat_pipes:
+                distance: 90
+                constraints.one_way: true
+
+    A07,A08.techs:
+            electricity_lines.distance: 151
+            gas_pipes.distance: 151
+            heat_pipes:
+                distance: 151
+                constraints.one_way: true
+
+    N5,A04.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A04,A05b.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A05b,A09b.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A09b,A02.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A09b,A01.techs:
+            electricity_lines.distance: 77
+            gas_pipes.distance: 77
+            heat_pipes:
+                distance: 77
+                constraints.one_way: true
+
+    A09b,A03.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
+
+    A03,A05a.techs:
+            electricity_lines:
+            gas_pipes:
+            heat_pipes.constraints.one_way: true
