@@ -3,11 +3,7 @@ Calliope model, specific to a district development in Cambridge, UK.
 
 For more information on the model structure and general use of Calliope, see [the documentation](https://calliope.readthedocs.io/en/stable/).
 
-<object data="cambridge_district.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="cambridge_district.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/brynpickering/cambridge-calliope/blob/master/cambridge_district.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+![Cambridge district map](cambridge_district.png)
 
 This model has been used in the following paper: `(Under review) B. Pickering, R. Choudhary. District energy system optimisation under uncertain demand: handling data-driven stochastic profiles, Applied Energy (2018)`
 
